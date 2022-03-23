@@ -170,12 +170,12 @@ export class HTTPStatus {
 
 
         //여기다가 고양이 치는거
-        if ($("#bongoCat1").style.display == "block") {
-            $("#bongoCat1").style.display = "none";
-            $("#bongoCat2").style.display = "block";
+        if ($("#bongoCat1").css("display") == "block") {
+            $("#bongoCat1").css("display", "none");
+            $("#bongoCat2").css("display", "block");
         } else {
-            $("#bongoCat1").style.display = "block";
-            $("#bongoCat2").style.display = "none";
+            $("#bongoCat1").css("display", "block");
+            $("#bongoCat2").css("display", "none");
         }
 
         if (isNote) {
