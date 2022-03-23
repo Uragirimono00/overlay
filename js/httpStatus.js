@@ -170,12 +170,21 @@ export class HTTPStatus {
 
 
         //여기다가 고양이 치는거
-        if ($("#bongoCat1").css("display") == "block") {
-            $("#bongoCat1").css("display", "none");
-            $("#bongoCat2").css("display", "block");
-        } else {
-            $("#bongoCat1").css("display", "block");
-            $("#bongoCat2").css("display", "none");
+        let min = 1;
+        let max = 5;
+        let randomCount = Math.floor(Math.random() * (max - min)) + min;
+
+        while ($("#bongoCat"+randomCount).css("display") != "none") {
+            randomCount = Math.floor(Math.random() * (max - min)) + min;
+            if ($("#bongoCat"+randomCount).css("display") == "none") break;
+        }
+
+        $("#bongoCat"+randomCount).css("display", "block");
+        for (let i = 1; i < 5; i++) {
+            if (randomCount == i) {
+                continue;
+            }
+            $("#bongoCat"+i).css("display", "none");
         }
 
         if (isNote) {
