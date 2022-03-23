@@ -94,7 +94,7 @@ export class HTTPStatus {
                     console.log("\n");
                 }
 
-                //this.performance(dataParsed.status.performance, true);
+                this.performance(dataParsed.status.performance, true);
                 break;
             case "noteMissed":
                 if (this.debug) {
@@ -103,7 +103,7 @@ export class HTTPStatus {
                     console.log("\n");
                 }
 
-                //this.performance(dataParsed.status.performance, true);
+                this.performance(dataParsed.status.performance, true);
                 break;
             case "pause":
                 if (this.debug) {
