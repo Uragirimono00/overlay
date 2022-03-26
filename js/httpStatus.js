@@ -179,13 +179,140 @@ export class HTTPStatus {
             if ($("#bongoCat"+randomCount).css("display") == "none") break;
         }
 
-        $("#bongoCat"+randomCount).css("display", "block");
-        for (let i = 1; i < 5; i++) {
-            if (randomCount == i) {
-                continue;
-            }
-            $("#bongoCat"+i).css("display", "none");
+        let nowBongocat = 1;
+        switch (data.noteCutDirection){
+            case "UpLeft":
+                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                    nowBongocat+=1;
+                }
+                if (nowBongocat == 1 || nowBongocat == 2 ) {
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 3){
+                    nowBongocat = 1;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 4){
+                    nowBongocat = 2;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                }
+                break;
+            case "UpRight":
+                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                    nowBongocat+=1;
+                }
+                if (nowBongocat == 1 || nowBongocat == 3 ) {
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 2){
+                    nowBongocat = 1;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 4){
+                    nowBongocat = 3;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                }
+                break;
+            case "DownLeft":
+                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                    nowBongocat+=1;
+                }
+                if (nowBongocat == 3 || nowBongocat == 4 ) {
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 1){
+                    nowBongocat = 3;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 2){
+                    nowBongocat = 4;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                }
+                break;
+            case "DownRight":
+                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                    nowBongocat+=1;
+                }
+                if (nowBongocat == 2 || nowBongocat == 4 ) {
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 1){
+                    nowBongocat = 2;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                } else if(nowBongocat == 3){
+                    nowBongocat = 4;
+                    $("#bongoCat"+nowBongocat).css("display", "block");
+                    for (let i = 1; i < 5; i++) {
+                        if (nowBongocat == i) {
+                            continue;
+                        }
+                        $("#bongoCat"+i).css("display", "none");
+                    }
+                }
+                break;
+
+
         }
+        
 
         if (isNote) {
             if (data.combo == 0) {
