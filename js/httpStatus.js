@@ -170,15 +170,7 @@ export class HTTPStatus {
 
 
         //여기다가 고양이 치는거
-        let min = 1;
-        let max = 5;
-        let randomCount = Math.floor(Math.random() * (max - min)) + min;
-
-        while ($("#bongoCat"+randomCount).css("display") != "none") {
-            randomCount = Math.floor(Math.random() * (max - min)) + min;
-            if ($("#bongoCat"+randomCount).css("display") == "none") break;
-        }
-
+        console.log(data.noteCutDirection);
         let nowBongocat = 1;
         switch (data.noteCutDirection){
             case "UpLeft":
