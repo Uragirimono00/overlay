@@ -170,6 +170,7 @@ export class HTTPStatus {
 
 
         //여기다가 고양이 치는거
+        console.log(data);
         console.log(data.noteCutDirection);
         let nowBongocat = 1;
         switch (data.noteCutDirection){
