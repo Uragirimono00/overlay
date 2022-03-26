@@ -171,141 +171,152 @@ export class HTTPStatus {
         //여기다가 고양이 치는거
         let nowBongocat = 1;
         switch (data.noteCutDirection){
-            case "UpLeft":
-                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                    nowBongocat+=1;
+            case "UpLeft": case "Up": case "UpRight": case "Left":
+                if (data.saberType == "SaberA") {
+                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                        nowBongocat+=1;
+                    }
+                    if (nowBongocat == 1 || nowBongocat == 2 ) {
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 3){
+                        nowBongocat = 1;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 4){
+                        nowBongocat = 2;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    }
                 }
-                if (nowBongocat == 1 || nowBongocat == 2 ) {
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
+                else if(data.saberType == "SaberB"){
+                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                        nowBongocat+=1;
                     }
-                } else if(nowBongocat == 3){
-                    nowBongocat = 1;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
+                    if (nowBongocat == 1 || nowBongocat == 3 ) {
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
                         }
-                        $("#bongoCat"+i).css("display", "none");
+                    } else if(nowBongocat == 2){
+                        nowBongocat = 1;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 4){
+                        nowBongocat = 3;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
                     }
-                } else if(nowBongocat == 4){
-                    nowBongocat = 2;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
+                }
+        
+                break;
+
+            case "Down": case "DownRight": case "DownLeft":  case "Right": 
+                if (data.saberType == "SaberA") {
+                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                        nowBongocat+=1;
+                    }
+                    if (nowBongocat == 3 || nowBongocat == 4 ) {
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
                         }
-                        $("#bongoCat"+i).css("display", "none");
+                    } else if(nowBongocat == 1){
+                        nowBongocat = 3;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 2){
+                        nowBongocat = 4;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    }
+                }
+                else if (data.saberType == "SaberB") {
+                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
+                        nowBongocat+=1;
+                    }
+                    if (nowBongocat == 2 || nowBongocat == 4 ) {
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 1){
+                        nowBongocat = 2;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
+                    } else if(nowBongocat == 3){
+                        nowBongocat = 4;
+                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat"+i).css("display", "none");
+                        }
                     }
                 }
                 break;
-            case "UpRight":
-                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                    nowBongocat+=1;
-                }
-                if (nowBongocat == 1 || nowBongocat == 3 ) {
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 2){
-                    nowBongocat = 1;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 4){
-                    nowBongocat = 3;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
+            case "Any": 
+                
+
+                break;
+            
+            default:
+                if (this.debug) {
+                    console.log("%cHTTPStatus.js log...", "background-color:blue");
+                    console.log("%cEvent not supported", "background-color: red");
+                    console.log("\n");
                 }
                 break;
-            case "DownLeft":
-                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                    nowBongocat+=1;
-                }
-                if (nowBongocat == 3 || nowBongocat == 4 ) {
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 1){
-                    nowBongocat = 3;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 2){
-                    nowBongocat = 4;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                }
-                break;
-            case "DownRight":
-                while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                    nowBongocat+=1;
-                }
-                if (nowBongocat == 2 || nowBongocat == 4 ) {
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 1){
-                    nowBongocat = 2;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                } else if(nowBongocat == 3){
-                    nowBongocat = 4;
-                    $("#bongoCat"+nowBongocat).css("display", "block");
-                    for (let i = 1; i < 5; i++) {
-                        if (nowBongocat == i) {
-                            continue;
-                        }
-                        $("#bongoCat"+i).css("display", "none");
-                    }
-                }
-                break;
-                default:
-                    if (this.debug) {
-                        console.log("%cHTTPStatus.js log...", "background-color:blue");
-                        console.log("%cEvent not supported", "background-color: red");
-                        console.log("\n");
-                    }
-                    break;
         }
     }
     performance(data, isNote = false) {
