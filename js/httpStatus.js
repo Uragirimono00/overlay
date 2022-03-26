@@ -94,6 +94,7 @@ export class HTTPStatus {
                     console.log("\n");
                 }
 
+                this.bongocat(dataParsed.noteCut, true);
                 this.performance(dataParsed.status.performance, true);
                 break;
             case "noteMissed":
@@ -103,6 +104,7 @@ export class HTTPStatus {
                     console.log("\n");
                 }
 
+                this.bongocat(dataParsed.noteCut, true);
                 this.performance(dataParsed.status.performance, true);
                 break;
             case "pause":
@@ -165,13 +167,8 @@ export class HTTPStatus {
     updateScore(score) {
 
     }
-
-    performance(data, isNote = false) {
-
-
+    bongocat(data, isNote = false){
         //여기다가 고양이 치는거
-        console.log(data);
-        console.log(data.noteCutDirection);
         let nowBongocat = 1;
         switch (data.noteCutDirection){
             case "UpLeft":
@@ -302,11 +299,16 @@ export class HTTPStatus {
                     }
                 }
                 break;
-
-
+                default:
+                    if (this.debug) {
+                        console.log("%cHTTPStatus.js log...", "background-color:blue");
+                        console.log("%cEvent not supported", "background-color: red");
+                        console.log("\n");
+                    }
+                    break;
         }
-        
-
+    }
+    performance(data, isNote = false) {
         if (isNote) {
             if (data.combo == 0) {
                 return;
