@@ -152,12 +152,18 @@ export class HTTPStatus {
      * Other function
      */
     startSongeffect() {
-        let audio = new Audio('/html/inc/overlay/sound/start.mp3');
+        const image = document.getElementsByClassName("loading")[0];
+        image.src = "./image/loading.gif";
+        setTimeout(() => {
+            image.src = "./image/loading.png";
+        }, 2000);
+
+        let audio = new Audio('./sound/start.mp3');
         audio.play();
     }
     pauseEffect() {
         console.log("pause!");
-        let audio = new Audio('/html/inc/overlay/sound/pause.ogg');
+        let audio = new Audio('./sound/pause.ogg');
         audio.play();
     }
     resumeEffect() {
@@ -167,149 +173,153 @@ export class HTTPStatus {
     updateScore(score) {
 
     }
-    bongocat(data, isNote = false){
+    bongocat(data, isNote = false) {
         //여기다가 고양이 치는거
         let nowBongocat = 1;
-        switch (data.noteCutDirection){
-            case "UpLeft": case "Up": case "UpRight": case "Left":
+        switch (data.noteCutDirection) {
+            case "UpLeft":
+            case "Up":
+            case "UpRight":
+            case "Left":
                 if (data.saberType == "SaberA") {
-                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                        nowBongocat+=1;
+                    while ($("#bongoCat" + nowBongocat).css("display") != "none") {
+                        nowBongocat += 1;
                     }
-                    if (nowBongocat == 1 || nowBongocat == 2 ) {
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                    if (nowBongocat == 1 || nowBongocat == 2) {
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
-                    } else if(nowBongocat == 3){
+                    } else if (nowBongocat == 3) {
                         nowBongocat = 1;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
-                    } else if(nowBongocat == 4){
+                    } else if (nowBongocat == 4) {
                         nowBongocat = 2;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
                     }
-                }
-                else if(data.saberType == "SaberB"){
-                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                        nowBongocat+=1;
+                } else if (data.saberType == "SaberB") {
+                    while ($("#bongoCat" + nowBongocat).css("display") != "none") {
+                        nowBongocat += 1;
                     }
-                    if (nowBongocat == 1 || nowBongocat == 3 ) {
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                    if (nowBongocat == 1 || nowBongocat == 3) {
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
-                    } else if(nowBongocat == 2){
+                    } else if (nowBongocat == 2) {
                         nowBongocat = 1;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
-                    } else if(nowBongocat == 4){
+                    } else if (nowBongocat == 4) {
                         nowBongocat = 3;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
+                        $("#bongoCat" + nowBongocat).css("display", "block");
                         for (let i = 1; i < 5; i++) {
                             if (nowBongocat == i) {
                                 continue;
                             }
-                            $("#bongoCat"+i).css("display", "none");
+                            $("#bongoCat" + i).css("display", "none");
                         }
                     }
                 }
-        
-                break;
-
-            case "Down": case "DownRight": case "DownLeft":  case "Right": 
-                if (data.saberType == "SaberA") {
-                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                        nowBongocat+=1;
-                    }
-                    if (nowBongocat == 3 || nowBongocat == 4 ) {
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    } else if(nowBongocat == 1){
-                        nowBongocat = 3;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    } else if(nowBongocat == 2){
-                        nowBongocat = 4;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    }
-                }
-                else if (data.saberType == "SaberB") {
-                    while ($("#bongoCat"+nowBongocat).css("display") != "none") {
-                        nowBongocat+=1;
-                    }
-                    if (nowBongocat == 2 || nowBongocat == 4 ) {
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    } else if(nowBongocat == 1){
-                        nowBongocat = 2;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    } else if(nowBongocat == 3){
-                        nowBongocat = 4;
-                        $("#bongoCat"+nowBongocat).css("display", "block");
-                        for (let i = 1; i < 5; i++) {
-                            if (nowBongocat == i) {
-                                continue;
-                            }
-                            $("#bongoCat"+i).css("display", "none");
-                        }
-                    }
-                }
-                break;
-            case "Any": 
-                
 
                 break;
-            
+
+            case "Down":
+            case "DownRight":
+            case "DownLeft":
+            case "Right":
+                if (data.saberType == "SaberA") {
+                    while ($("#bongoCat" + nowBongocat).css("display") != "none") {
+                        nowBongocat += 1;
+                    }
+                    if (nowBongocat == 3 || nowBongocat == 4) {
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    } else if (nowBongocat == 1) {
+                        nowBongocat = 3;
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    } else if (nowBongocat == 2) {
+                        nowBongocat = 4;
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    }
+                } else if (data.saberType == "SaberB") {
+                    while ($("#bongoCat" + nowBongocat).css("display") != "none") {
+                        nowBongocat += 1;
+                    }
+                    if (nowBongocat == 2 || nowBongocat == 4) {
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    } else if (nowBongocat == 1) {
+                        nowBongocat = 2;
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    } else if (nowBongocat == 3) {
+                        nowBongocat = 4;
+                        $("#bongoCat" + nowBongocat).css("display", "block");
+                        for (let i = 1; i < 5; i++) {
+                            if (nowBongocat == i) {
+                                continue;
+                            }
+                            $("#bongoCat" + i).css("display", "none");
+                        }
+                    }
+                }
+                break;
+            case "Any":
+
+
+                break;
+
             default:
                 if (this.debug) {
                     console.log("%cHTTPStatus.js log...", "background-color:blue");

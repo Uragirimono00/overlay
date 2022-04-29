@@ -4,23 +4,23 @@
 
 @font-face {
     font-family: "grooker";
-    src: url("../fonts/grooker_regular-webfont.woff2") format("woff2"),
-         url("../fonts/grooker_regular-webfont.woff") format("woff");
+    src: url("../fonts/grooker_regular-webfont.woff2") format("woff2"), url("../fonts/grooker_regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "LCD";
-    src: url("../fonts/att-webfont.woff2") format("woff2"),
-         url("../fonts/att-webfont.woff") format("woff");
+    src: url("../fonts/att-webfont.woff2") format("woff2"), url("../fonts/att-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
+
 /**
  * Difficulty Color
  */
+
 .ExpertPlus {
     background-color: #6610f2;
 }
@@ -41,26 +41,40 @@
     background-color: #00a279;
 }
 
+
 /**
  * Animation
  */
- .fade {
+
+.fade {
     transition: opacity 1s;
- }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 /**
  * Main
  */
+
 body {
     font-family: "grooker";
     font-size: 20pt;
     font-weight: 500;
     color: #ffff;
+    width: 1920px;
+    height: 1080px;
 }
+
 
 /**
  * Main box
  */
+
 #box {
     position: absolute;
     width: 600px;
@@ -71,9 +85,11 @@ body {
     opacity: 0;
 }
 
+
 /**
  * Cover box
  */
+
 #cover {
     width: 180px;
     height: 180px;
@@ -88,9 +104,11 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.247);
 }
 
+
 /**
  * Cover background song information
  */
+
 #bgInfoCover {
     position: absolute;
     top: 0;
@@ -110,9 +128,11 @@ body {
     filter: blur(5px);
 }
 
+
 /**
  * Song information
  */
+
 #songInformations {
     position: absolute;
     top: 0px;
@@ -129,14 +149,16 @@ body {
     height: 178px;
     margin-left: 0px !important;
     border: 1px solid rgba(255, 255, 255, 0.247);
-	border-left: 0px;
+    border-left: 0px;
 }
 
 #songInformations div {
     margin-left: 15px;
 }
 
-#songTitle, #songArtist, #songMapper {
+#songTitle,
+#songArtist,
+#songMapper {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -218,9 +240,11 @@ body {
     font-size: 15pt;
 }
 
+
 /**
  * Score information
  */
+
 #scoreInformations {
     position: absolute;
     bottom: 20px;
@@ -230,7 +254,8 @@ body {
     opacity: 0;
 }
 
-#scorePlacement, #score {
+#scorePlacement,
+#score {
     display: block;
     float: left;
     margin-top: 8px;
@@ -240,7 +265,8 @@ body {
     font-style: italic;
 }
 
-#scorePlacement span, #score span {
+#scorePlacement span,
+#score span {
     margin-left: 7px;
 }
 
@@ -287,4 +313,15 @@ body {
 
 #notesPerSeconds {
     color: rgb(68, 249, 255);
+}
+
+.loading {
+    position: absolute;
+    top: 0%;
+}
+
+.bongocat {
+    position: absolute;
+    top: -23%;
+    right: 540px;
 }
