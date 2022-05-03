@@ -68,6 +68,7 @@ body {
     color: #ffff;
     width: 1920px;
     height: 1080px;
+    position: relative;
 }
 
 
@@ -323,5 +324,5 @@ body {
 .bongocat {
     position: absolute;
     top: -23%;
-    right: 540px;
+    right: 600px;
 }
